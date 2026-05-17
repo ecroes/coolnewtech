@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAPPY BIRTHDAY RUBEN 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Permanent+Marker&family=VT323&family=Righteous&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #FFD700;
+    --orange: #FF6B35;
+    --pink: #FF1493;
+    --purple: #8B00FF;
+    --teal: #00CED1;
+    --lime: #ADFF2F;
+    --bg-dark: #0a0010;
+  }
+
+  body {
+    background: var(--bg-dark);
+    font-family: 'Boogaloo', cursive;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* DISCO BALL */
+  .disco-ball-container {
+    position: fixed;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    text-align: center;
+    animation: swing 3s ease-in-out infinite;
+  }
+  @keyframes swing {
+    0%,100% { transform: translateX(-50%) rotate(-5deg); }
+    50% { transform: translateX(-50%) rotate(5deg); }
+  }
+  .disco-string {
+    width: 3px;
+    height: 60px;
+    background: #aaa;
+    margin: 0 auto;
+  }
+  .disco-ball {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fff 0%, #aaa 30%, #555 70%, #222 100%);
+    position: relative;
+    box-shadow: 0 0 20px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.2);
+    animation: disco-rotate 2s linear infinite;
+    overflow: hidden;
+  }
+  @keyframes disco-rotate {
+    from { filter: hue-rotate(0deg) brightness(1); }
+    to { filter: hue-rotate(360deg) brightness(1.3); }
+  }
+  .disco-ball::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent 0, transparent 4px,
+      rgba(255,255,255,0.15) 4px, rgba(255,255,255,0.15) 6px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0, transparent 4px,
+      rgba(255,255,255,0.15) 4px, rgba(255,255,255,0.15) 6px
+    );
+  }
+
+  /* DISCO LIGHTS */
+  .light-beam {
+    position: fixed;
+    top: 0;
+    width: 4px;
+    height: 60vh;
+    opacity: 0.15;
+    transform-origin: top center;
+    animation: beam-sweep 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .light-beam:nth-child(1) { left: 30%; background: linear-gradient(180deg, var(--pink), transparent); animation-delay: 0s; }
+  .light-beam:nth-child(2) { left: 50%; background: linear-gradient(180deg, var(--teal), transparent); animation-delay: 0.7s; }
+  .light-beam:nth-child(3) { left: 70%; background: linear-gradient(180deg, var(--gold), transparent); animation-delay: 1.4s; }
+  .light-beam:nth-child(4) { left: 20%; background: linear-gradient(180deg, var(--lime), transparent); animation-delay: 2.1s; }
+  .light-beam:nth-child(5) { left: 80%; background: linear-gradient(180deg, var(--purple), transparent); animation-delay: 0.3s; }
+  @keyframes beam-sweep {
+    0%,100% { transform: rotate(-20deg); opacity: 0.1; }
+    50% { transform: rotate(20deg); opacity: 0.3; }
+  }
+
+  /* STARS */
+  .stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0%,100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    position: relative;
+    z-index: 10;
+    padding: 120px 20px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* TITLE */
+  .title-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .title-top {
+    font-family: 'VT323', monospace;
+    font-size: clamp(18px, 5vw, 28px);
+    color: var(--teal);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    animation: flicker 3s infinite;
+  }
+  @keyframes flicker {
+    0%,95%,100% { opacity: 1; }
+    96% { opacity: 0.3; }
+    98% { opacity: 0.7; }
+  }
+  .title-main {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(50px, 15vw, 120px);
+    background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 25%, var(--pink) 50%, var(--purple) 75%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbow-shift 3s linear infinite;
+    background-size: 200% auto;
+    line-height: 1;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+  }
+  @keyframes rainbow-shift {
+    from { background-position: 0% center; }
+    to { background-position: 200% center; }
+  }
+  .title-name {
+    font-family: 'Righteous', cursive;
+    font-size: clamp(60px, 20vw, 150px);
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    text-shadow: 0 0 30px var(--gold), 0 0 60px var(--orange), 4px 4px 0 var(--orange), -4px -4px 0 var(--pink);
+    animation: name-pulse 1.5s ease-in-out infinite;
+    line-height: 1;
+  }
+  @keyframes name-pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+  .title-sub {
+    font-family: 'VT323', monospace;
+    font-size: clamp(24px, 5vw, 40px);
+    color: var(--lime);
+    letter-spacing: 4px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%,100% { opacity: 1; } 50% { opacity: 0; }
+  }
+
+  /* CASSETTE TAPE */
+  .cassette-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+  }
+  .cassette {
+    width: 200px;
+    height: 130px;
+    background: linear-gradient(145deg, #2a2a2a, #111);
+    border-radius: 12px;
+    border: 2px solid #444;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.1);
+    animation: cassette-float 3s ease-in-out infinite;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .cassette:hover { transform: scale(1.08) rotate(-2deg); }
+  .cassette:nth-child(2) { animation-delay: 0.5s; background: linear-gradient(145deg, #1a0a2e, #080015); border-color: var(--purple); }
+  .cassette:nth-child(3) { animation-delay: 1s; background: linear-gradient(145deg, #2a0a0a, #150005); border-color: var(--pink); }
+  @keyframes cassette-float {
+    0%,100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+  }
+  .cassette-label {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    right: 15px;
+    height: 55px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cassette:nth-child(1) .cassette-label { background: linear-gradient(135deg, var(--teal), #006070); }
+  .cassette:nth-child(2) .cassette-label { background: linear-gradient(135deg, var(--purple), #4a0080); }
+  .cassette:nth-child(3) .cassette-label { background: linear-gradient(135deg, var(--pink), #800060); }
+  .cassette-title {
+    font-family: 'Righteous', cursive;
+    font-size: 11px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  }
+  .cassette-artist {
+    font-family: 'VT323', monospace;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+  }
+  .cassette-lines {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 72px;
+    height: 3px;
+    background: repeating-linear-gradient(90deg, #555 0, #555 3px, transparent 3px, transparent 6px);
+  }
+  .cassette-holes {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+  }
+  .cassette-reel {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    border: 2px solid #555;
+    position: relative;
+    animation: reel-spin 1s linear infinite;
+  }
+  .cassette:nth-child(2) .cassette-reel { animation-delay: -0.3s; }
+  .cassette:nth-child(3) .cassette-reel { animation-delay: -0.6s; }
+  @keyframes reel-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .cassette-reel::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: #333;
+    border: 1px solid #666;
+  }
+  .cassette-reel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #888;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  /* TAPE SQUIGGLE */
+  .tape-squiggle {
+    text-align: center;
+    font-size: 40px;
+    margin: -10px 0;
+    color: var(--gold);
+    font-family: 'Permanent Marker', cursive;
+    animation: squiggle 2s ease-in-out infinite;
+  }
+  @keyframes squiggle {
+    0%,100% { transform: skewX(-5deg); color: var(--gold); }
+    33% { transform: skewX(5deg); color: var(--pink); }
+    66% { transform: skewX(-3deg); color: var(--teal); }
+  }
+
+  /* MEME SECTION */
+  .meme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+  .meme-card {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    animation: border-glow 3s linear infinite;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .meme-card:hover {
+    transform: scale(1.04) rotate(1deg);
+    z-index: 20;
+  }
+  .meme-card:nth-child(odd):hover { transform: scale(1.04) rotate(-1deg); }
+  @keyframes border-glow {
+    0% { border-color: var(--pink); box-shadow: 0 0 20px var(--pink); }
+    33% { border-color: var(--teal); box-shadow: 0 0 20px var(--teal); }
+    66% { border-color: var(--gold); box-shadow: 0 0 20px var(--gold); }
+    100% { border-color: var(--pink); box-shadow: 0 0 20px var(--pink); }
+  }
+  .meme-card:nth-child(2) { animation-delay: -1s; }
+  .meme-card:nth-child(3) { animation-delay: -2s; }
+  .meme-card:nth-child(4) { animation-delay: -0.5s; }
+  .meme-card:nth-child(5) { animation-delay: -1.5s; }
+  .meme-card:nth-child(6) { animation-delay: -2.5s; }
+
+  .meme-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+    background: #1a1a1a;
+  }
+  .meme-img-wrapper svg {
+    width: 100%;
+    height: 100%;
+  }
+  .meme-caption {
+    padding: 10px 14px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 0 black;
+  }
+
+  /* FUNKY MEME ILLUSTRATIONS */
+  /* done as inline SVG art */
+
+  /* DISCO FOOTER */
+  .disco-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 20px;
+  }
+  .footer-text {
+    font-family: 'Righteous', cursive;
+    font-size: clamp(18px, 4vw, 32px);
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold);
+    letter-spacing: 4px;
+    animation: footer-flash 2s step-end infinite;
+  }
+  @keyframes footer-flash {
+    0%,90%,100% { color: var(--gold); text-shadow: 0 0 20px var(--gold); }
+    91% { color: var(--pink); text-shadow: 0 0 20px var(--pink); }
+    93% { color: var(--teal); text-shadow: 0 0 20px var(--teal); }
+    95% { color: var(--lime); text-shadow: 0 0 20px var(--lime); }
+  }
+  .emoji-dance {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .emoji-dance span {
+    display: inline-block;
+    animation: dancer 0.6s ease-in-out infinite alternate;
+  }
+  .emoji-dance span:nth-child(2) { animation-delay: 0.1s; }
+  .emoji-dance span:nth-child(3) { animation-delay: 0.2s; }
+  .emoji-dance span:nth-child(4) { animation-delay: 0.3s; }
+  .emoji-dance span:nth-child(5) { animation-delay: 0.4s; }
+  .emoji-dance span:nth-child(6) { animation-delay: 0.5s; }
+  @keyframes dancer {
+    from { transform: translateY(0) rotate(-10deg); }
+    to { transform: translateY(-12px) rotate(10deg); }
+  }
+
+  /* CONFETTI EXPLOSION */
+  .confetti-piece {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    animation: confetti-fall linear infinite;
+    pointer-events: none;
+    z-index: 200;
+    border-radius: 2px;
+  }
+  @keyframes confetti-fall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* VINYL RECORD */
+  .vinyl-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  .vinyl {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, #1a1a1a 0, #1a1a1a 4px, #2a2a2a 4px, #2a2a2a 6px);
+    position: relative;
+    animation: vinyl-spin 3s linear infinite;
+    box-shadow: 0 0 30px var(--purple), 0 0 60px rgba(139,0,255,0.3);
+  }
+  @keyframes vinyl-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .vinyl::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold) 0%, var(--orange) 40%, #8B4513 100%);
+    transform: translate(-50%, -50%);
+  }
+  .vinyl::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #111;
+    transform: translate(-50%, -50%);
+  }
+
+  /* MARQUEE BAND */
+  .marquee-band {
+    background: var(--pink);
+    padding: 10px 0;
+    overflow: hidden;
+    margin: 30px 0;
+    transform: rotate(-1deg);
+    box-shadow: 0 4px 20px var(--pink);
+  }
+  .marquee-inner {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 12s linear infinite;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    gap: 40px;
+  }
+  .marquee-inner span { text-shadow: 2px 2px 0 rgba(0,0,0,0.3); }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(24px, 5vw, 40px);
+    text-align: center;
+    color: var(--teal);
+    text-shadow: 0 0 20px var(--teal), 2px 2px 0 var(--purple);
+    margin: 40px 0 20px;
+    transform: rotate(-1deg);
+  }
+
+  /* SPEECH BUBBLE */
+  .speech-bubble {
+    background: white;
+    color: #111;
+    border-radius: 20px;
+    padding: 16px 24px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 4px 4px 0 var(--purple);
+    animation: bubble-pop 2s ease-in-out infinite;
+    line-height: 1.4;
+  }
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    border-width: 20px 15px 0;
+    border-style: solid;
+    border-color: white transparent transparent;
+  }
+  @keyframes bubble-pop {
+    0%,100% { transform: scale(1) rotate(-1deg); }
+    50% { transform: scale(1.02) rotate(1deg); }
+  }
+</style>
+</head>
+<body>
+
+<!-- LIGHT BEAMS -->
+<div class="light-beam"></div>
+<div class="light-beam"></div>
+<div class="light-beam"></div>
+<div class="light-beam"></div>
+<div class="light-beam"></div>
+
+<!-- STARS BG (JS-generated) -->
+<div class="stars" id="stars"></div>
+
+<!-- DISCO BALL -->
+<div class="disco-ball-container">
+  <div class="disco-string"></div>
+  <div class="disco-ball"></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- TITLE -->
+  <div class="title-section">
+    <div class="title-top">✦ Everybody Say ✦</div>
+    <span class="title-main">Happy Birthday</span>
+    <span class="title-name">RUBEN!</span>
+    <div class="title-sub">___ IT'S YA BOY'S DAY ___</div>
+  </div>
+
+  <!-- VINYL -->
+  <div class="vinyl-section">
+    <div class="vinyl"></div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-inner">
+      <span>🎂 HAPPY BIRTHDAY RUBEN 🎶</span>
+      <span>🕺 GET DOWN TONIGHT 🎷</span>
+      <span>🎉 FUNKY TOWN IS CALLING 🎸</span>
+      <span>🪩 DISCO INFERNO 🔥</span>
+      <span>🎂 HAPPY BIRTHDAY RUBEN 🎶</span>
+      <span>🕺 GET DOWN TONIGHT 🎷</span>
+      <span>🎉 FUNKY TOWN IS CALLING 🎸</span>
+      <span>🪩 DISCO INFERNO 🔥</span>
+    </div>
+  </div>
+
+  <!-- SPEECH BUBBLE -->
+  <div class="speech-bubble">
+    "Ruben just walked into the party and the whole disco ball started spinning FASTER" 🪩
+  </div>
+
+  <!-- CASSETTE TAPES -->
+  <h2 class="section-title">🎵 Now Playing on RUBEN FM 📻</h2>
+  <div class="cassette-row">
+    <div class="cassette">
+      <div class="cassette-label">
+        <div class="cassette-title">RUBEN'S GREATEST HITS</div>
+        <div class="cassette-artist">Side A — The Legends</div>
+      </div>
+      <div class="cassette-lines"></div>
+      <div class="cassette-holes">
+        <div class="cassette-reel"></div>
+        <div class="cassette-reel"></div>
+      </div>
+    </div>
+    <div class="cassette">
+      <div class="cassette-label">
+        <div class="cassette-title">BIRTHDAY BOY VIBES</div>
+        <div class="cassette-artist">Side B — The Bangers</div>
+      </div>
+      <div class="cassette-lines"></div>
+      <div class="cassette-holes">
+        <div class="cassette-reel"></div>
+        <div class="cassette-reel"></div>
+      </div>
+    </div>
+    <div class="cassette">
+      <div class="cassette-label">
+        <div class="cassette-title">FUNKY DISCO RUBEN</div>
+        <div class="cassette-artist">Unreleased Demos</div>
+      </div>
+      <div class="cassette-lines"></div>
+      <div class="cassette-holes">
+        <div class="cassette-reel"></div>
+        <div class="cassette-reel"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tape-squiggle">〰〰〰〰〰〰〰〰〰〰</div>
+
+  <!-- MEME SECTION -->
+  <h2 class="section-title">🐸 The Memes Have Spoken 🐸</h2>
+  <div class="meme-grid">
+
+    <!-- MEME 1: Drake meme style -->
+    <div class="meme-card">
+      <div class="meme-img-wrapper">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" fill="#1a1a2e"/>
+          <!-- Top panel - reject -->
+          <rect x="0" y="0" width="300" height="145" fill="#16213e"/>
+          <!-- Bottom panel - approve -->
+          <rect x="0" y="155" width="300" height="145" fill="#0f3460"/>
+          <line x1="0" y1="150" x2="300" y2="150" stroke="#444" stroke-width="3"/>
+          <!-- Stick figure Drake - top (rejecting) -->
+          <circle cx="60" cy="45" r="18" fill="#f0a050" stroke="#c07020" stroke-width="2"/>
+          <line x1="60" y1="63" x2="60" y2="110" stroke="#f0a050" stroke-width="5" stroke-linecap="round"/>
+          <line x1="60" y1="80" x2="30" y2="65" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <line x1="60" y1="80" x2="90" y2="60" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <line x1="60" y1="110" x2="42" y2="138" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <line x1="60" y1="110" x2="78" y2="138" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <!-- X hand -->
+          <line x1="85" y1="55" x2="100" y2="70" stroke="#ff4444" stroke-width="3"/>
+          <line x1="100" y1="55" x2="85" y2="70" stroke="#ff4444" stroke-width="3"/>
+          <!-- Top text -->
+          <text x="165" y="50" font-family="Impact,sans-serif" font-size="13" fill="white" text-anchor="middle">Working on your</text>
+          <text x="165" y="68" font-family="Impact,sans-serif" font-size="13" fill="white" text-anchor="middle">actual birthday plans</text>
+          <!-- Drake approving - bottom -->
+          <circle cx="60" cy="195" r="18" fill="#f0a050" stroke="#c07020" stroke-width="2"/>
+          <line x1="60" y1="213" x2="60" y2="260" stroke="#f0a050" stroke-width="5" stroke-linecap="round"/>
+          <line x1="60" y1="230" x2="35" y2="250" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <line x1="60" y1="230" x2="95" y2="215" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <line x1="60" y1="260" x2="42" y2="288" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <line x1="60" y1="260" x2="78" y2="288" stroke="#f0a050" stroke-width="4" stroke-linecap="round"/>
+          <!-- Point finger -->
+          <line x1="90" y1="215" x2="115" y2="225" stroke="#f0a050" stroke-width="3"/>
+          <!-- Check -->
+          <text x="100" y="218" font-size="20" fill="#00ff88">✓</text>
+          <!-- Bottom text -->
+          <text x="190" y="200" font-family="Impact,sans-serif" font-size="13" fill="white" text-anchor="middle">Disco-dancing into</text>
+          <text x="190" y="218" font-family="Impact,sans-serif" font-size="13" fill="white" text-anchor="middle">Ruben's birthday party</text>
+          <text x="190" y="236" font-family="Impact,sans-serif" font-size="13" fill="#FFD700" text-anchor="middle">at 3am 🕺</text>
+        </svg>
+      </div>
+      <div class="meme-caption">Ruben on his birthday tbh</div>
+    </div>
+
+    <!-- MEME 2: This is fine dog -->
+    <div class="meme-card">
+      <div class="meme-img-wrapper">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" fill="#FF6B35"/>
+          <!-- Flames -->
+          <ellipse cx="50" cy="280" rx="40" ry="50" fill="#ff4400" opacity="0.8"/>
+          <ellipse cx="120" cy="290" rx="35" ry="45" fill="#ff6600" opacity="0.7"/>
+          <ellipse cx="200" cy="285" rx="45" ry="55" fill="#ff4400" opacity="0.8"/>
+          <ellipse cx="270" cy="280" rx="38" ry="48" fill="#ff6600" opacity="0.7"/>
+          <ellipse cx="80" cy="275" rx="30" ry="40" fill="#ffaa00" opacity="0.6"/>
+          <ellipse cx="160" cy="270" rx="32" ry="42" fill="#ffcc00" opacity="0.6"/>
+          <ellipse cx="240" cy="275" rx="28" ry="38" fill="#ffaa00" opacity="0.5"/>
+          <!-- Table -->
+          <rect x="40" y="190" width="220" height="15" fill="#8B4513" rx="3"/>
+          <rect x="50" y="205" width="12" height="60" fill="#7a3b10"/>
+          <rect x="238" y="205" width="12" height="60" fill="#7a3b10"/>
+          <!-- Coffee cup -->
+          <rect x="130" y="165" width="40" height="30" fill="white" rx="5"/>
+          <text x="150" y="185" font-size="14" text-anchor="middle">☕</text>
+          <!-- Dog sitting -->
+          <circle cx="150" cy="130" r="30" fill="#F4A460"/>
+          <ellipse cx="150" cy="150" rx="38" ry="45" fill="#DEB887"/>
+          <circle cx="135" cy="122" r="12" fill="#F4A460"/>
+          <circle cx="165" cy="122" r="12" fill="#F4A460"/>
+          <circle cx="135" cy="120" r="5" fill="#333"/>
+          <circle cx="165" cy="120" r="5" fill="#333"/>
+          <ellipse cx="150" cy="135" rx="8" ry="5" fill="#cc8866"/>
+          <!-- Dog hat -->
+          <ellipse cx="150" cy="105" rx="22" ry="8" fill="#ff1493"/>
+          <rect x="135" y="85" width="30" height="22" fill="#ff1493" rx="3"/>
+          <text x="150" y="100" font-size="10" text-anchor="middle" fill="white" font-weight="bold">BDAY</text>
+          <!-- Text -->
+          <text x="150" y="35" font-family="Impact,sans-serif" font-size="18" fill="white" text-anchor="middle" stroke="black" stroke-width="1">RUBEN TURNING</text>
+          <text x="150" y="58" font-family="Impact,sans-serif" font-size="18" fill="white" text-anchor="middle" stroke="black" stroke-width="1">ANOTHER YEAR OLDER:</text>
+          <text x="150" y="78" font-family="Impact,sans-serif" font-size="16" fill="#FFD700" text-anchor="middle">"This is fine 🔥"</text>
+        </svg>
+      </div>
+      <div class="meme-caption">Ruben's exact energy rn</div>
+    </div>
+
+    <!-- MEME 3: Math lady -->
+    <div class="meme-card">
+      <div class="meme-img-wrapper">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" fill="#1a0a3e"/>
+          <!-- Math equations floating -->
+          <text x="20" y="30" font-family="monospace" font-size="10" fill="#00ffff" opacity="0.6">∑(cake) = ∞</text>
+          <text x="180" y="50" font-family="monospace" font-size="9" fill="#ff69b4" opacity="0.5">age++ = fun()</text>
+          <text x="10" y="280" font-family="monospace" font-size="9" fill="#adff2f" opacity="0.5">disco(ruben) = 💯</text>
+          <text x="160" y="270" font-family="monospace" font-size="10" fill="#ffd700" opacity="0.6">🎂 × ∞</text>
+          <text x="50" y="260" font-family="monospace" font-size="8" fill="#ff6b35" opacity="0.4">birthday_vibes.exe</text>
+          <!-- Person silhouette with confused look -->
+          <ellipse cx="150" cy="155" rx="50" ry="70" fill="#5a3a2a"/>
+          <circle cx="150" cy="90" r="38" fill="#c8956c"/>
+          <!-- Hair -->
+          <ellipse cx="150" cy="62" rx="40" ry="20" fill="#3a2010"/>
+          <ellipse cx="115" cy="78" rx="12" ry="25" fill="#3a2010"/>
+          <ellipse cx="185" cy="78" rx="12" ry="25" fill="#3a2010"/>
+          <!-- Eyes -->
+          <circle cx="136" cy="90" r="6" fill="white"/>
+          <circle cx="164" cy="90" r="6" fill="white"/>
+          <circle cx="138" cy="90" r="3" fill="#333"/>
+          <circle cx="166" cy="90" r="3" fill="#333"/>
+          <!-- Spiral eyes = confused -->
+          <text x="130" y="96" font-size="12">🌀</text>
+          <text x="158" y="96" font-size="12">🌀</text>
+          <!-- Question marks -->
+          <text x="55" y="110" font-size="28" fill="#FFD700" opacity="0.9">?</text>
+          <text x="230" y="95" font-size="24" fill="#FF69B4" opacity="0.9">?</text>
+          <text x="245" y="140" font-size="20" fill="#00ffff" opacity="0.8">?</text>
+          <text x="35" y="155" font-size="22" fill="#ADFF2F" opacity="0.8">?</text>
+          <!-- Caption -->
+          <rect x="0" y="195" width="300" height="105" fill="rgba(0,0,0,0.75)"/>
+          <text x="150" y="220" font-family="Impact,sans-serif" font-size="14" fill="white" text-anchor="middle">ME TRYING TO CALCULATE</text>
+          <text x="150" y="240" font-family="Impact,sans-serif" font-size="14" fill="white" text-anchor="middle">HOW RUBEN IS STILL</text>
+          <text x="150" y="260" font-family="Impact,sans-serif" font-size="14" fill="#FFD700" text-anchor="middle">MORE FABULOUS EVERY YEAR</text>
+          <text x="150" y="285" font-family="Impact,sans-serif" font-size="18" fill="#FF69B4" text-anchor="middle">💅✨🤌</text>
+        </svg>
+      </div>
+      <div class="meme-caption">Scientists baffled</div>
+    </div>
+
+    <!-- MEME 4: Distracted boyfriend -->
+    <div class="meme-card">
+      <div class="meme-img-wrapper">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" fill="#2d1b00"/>
+          <!-- Street background -->
+          <rect x="0" y="180" width="300" height="120" fill="#333"/>
+          <rect x="0" y="175" width="300" height="15" fill="#888" opacity="0.5"/>
+          <!-- Ruben (person turning) -->
+          <circle cx="120" cy="100" r="28" fill="#d4956a"/>
+          <ellipse cx="120" cy="135" rx="32" ry="40" fill="#8B0000"/>
+          <!-- Head turning toward disco -->
+          <text x="108" y="97" font-size="12">👀</text>
+          <!-- Text label -->
+          <rect x="70" y="55" width="100" height="22" fill="#FFD700" rx="4"/>
+          <text x="120" y="70" font-family="Impact,sans-serif" font-size="11" fill="#111" text-anchor="middle">RUBEN</text>
+          <!-- The disco party -->
+          <circle cx="240" cy="90" r="28" fill="#ff1493"/>
+          <text x="228" y="97" font-size="14">🪩</text>
+          <rect x="190" y="45" width="100" height="22" fill="#FF1493" rx="4"/>
+          <text x="240" y="60" font-family="Impact,sans-serif" font-size="10" fill="white" text-anchor="middle">DISCO PARTY</text>
+          <!-- Girlfriend (responsibilities) -->
+          <circle cx="50" cy="110" r="26" fill="#c08060"/>
+          <ellipse cx="50" cy="145" rx="28" ry="38" fill="#4B0082"/>
+          <text x="38" y="117" font-size="12">😤</text>
+          <rect x="5" y="65" width="90" height="22" fill="#4B0082" rx="4"/>
+          <text x="50" y="80" font-family="Impact,sans-serif" font-size="8.5" fill="white" text-anchor="middle">RESPONSIBILITIES</text>
+          <!-- Arrow of attention -->
+          <line x1="140" y1="95" x2="210" y2="88" stroke="#FFD700" stroke-width="3" stroke-dasharray="5,3"/>
+          <polygon points="210,84 220,88 210,92" fill="#FFD700"/>
+          <!-- Bottom text -->
+          <rect x="0" y="235" width="300" height="65" fill="rgba(0,0,0,0.8)"/>
+          <text x="150" y="257" font-family="Impact,sans-serif" font-size="13" fill="white" text-anchor="middle">EVERY BIRTHDAY BE LIKE</text>
+          <text x="150" y="278" font-family="Impact,sans-serif" font-size="13" fill="#FFD700" text-anchor="middle">"just one more song" 🎵</text>
+          <text x="150" y="296" font-family="Impact,sans-serif" font-size="11" fill="#FF69B4" text-anchor="middle">*dances for 6 more hours*</text>
+        </svg>
+      </div>
+      <div class="meme-caption">Every. Single. Time. 💀</div>
+    </div>
+
+    <!-- MEME 5: Two buttons -->
+    <div class="meme-card">
+      <div class="meme-img-wrapper">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" fill="#0d1117"/>
+          <!-- Sweating dude body -->
+          <ellipse cx="150" cy="185" rx="65" ry="75" fill="#3a6ea5"/>
+          <!-- Head -->
+          <circle cx="150" cy="100" r="45" fill="#f5c5a3"/>
+          <!-- Hair -->
+          <ellipse cx="150" cy="68" rx="43" ry="18" fill="#3d2b1f"/>
+          <!-- Eyes - stressed -->
+          <ellipse cx="132" cy="100" rx="9" ry="10" fill="white"/>
+          <ellipse cx="168" cy="100" rx="9" ry="10" fill="white"/>
+          <circle cx="132" cy="102" r="5" fill="#1a1a1a"/>
+          <circle cx="168" cy="102" r="5" fill="#1a1a1a"/>
+          <!-- Sweat drops -->
+          <ellipse cx="105" cy="88" rx="4" ry="7" fill="#87ceeb" opacity="0.8"/>
+          <ellipse cx="99" cy="105" rx="3" ry="5" fill="#87ceeb" opacity="0.6"/>
+          <ellipse cx="197" cy="92" rx="3" ry="6" fill="#87ceeb" opacity="0.7"/>
+          <!-- Mouth open stressed -->
+          <ellipse cx="150" cy="125" rx="14" ry="8" fill="#c0392b"/>
+          <rect x="140" y="120" width="20" height="5" fill="#f5c5a3"/>
+          <!-- Two big buttons -->
+          <rect x="35" y="185" width="98" height="55" fill="#e74c3c" rx="12"/>
+          <rect x="167" y="185" width="98" height="55" fill="#e74c3c" rx="12"/>
+          <!-- Highlights on buttons -->
+          <rect x="45" y="192" width="78" height="8" fill="rgba(255,255,255,0.25)" rx="4"/>
+          <rect x="177" y="192" width="78" height="8" fill="rgba(255,255,255,0.25)" rx="4"/>
+          <!-- Button text -->
+          <text x="84" y="207" font-family="Impact,sans-serif" font-size="9" fill="white" text-anchor="middle">MORE CAKE</text>
+          <text x="84" y="220" font-family="Impact,sans-serif" font-size="9" fill="white" text-anchor="middle">🎂</text>
+          <text x="84" y="232" font-family="Impact,sans-serif" font-size="9" fill="white" text-anchor="middle">(it's his bday)</text>
+          <text x="216" y="207" font-family="Impact,sans-serif" font-size="9" fill="white" text-anchor="middle">DANCE HARDER</text>
+          <text x="216" y="220" font-family="Impact,sans-serif" font-size="9" fill="white" text-anchor="middle">🕺</text>
+          <text x="216" y="232" font-family="Impact,sans-serif" font-size="9" fill="white" text-anchor="middle">(it's his bday)</text>
+          <!-- Arrow pointing at both -->
+          <line x1="150" y1="165" x2="84" y2="185" stroke="#FFD700" stroke-width="2.5"/>
+          <line x1="150" y1="165" x2="216" y2="185" stroke="#FFD700" stroke-width="2.5"/>
+          <!-- Person label -->
+          <rect x="100" y="32" width="100" height="22" fill="#FFD700" rx="5"/>
+          <text x="150" y="47" font-family="Impact,sans-serif" font-size="11" fill="#111" text-anchor="middle">RUBEN TODAY</text>
+        </svg>
+      </div>
+      <div class="meme-caption">Hard choices on your bday 😤</div>
+    </div>
+
+    <!-- MEME 6: Galaxy brain -->
+    <div class="meme-card">
+      <div class="meme-img-wrapper">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" fill="#0a001a"/>
+          <!-- Expanding brain panels -->
+          <!-- Panel 1 - small brain -->
+          <rect x="5" y="10" width="290" height="55" fill="#1a0030" rx="4"/>
+          <ellipse cx="50" cy="37" rx="22" ry="18" fill="#9b59b6"/>
+          <text x="50" y="42" font-size="10" text-anchor="middle">🧠</text>
+          <text x="170" y="32" font-family="Impact,sans-serif" font-size="11" fill="white" text-anchor="middle">Saying happy birthday</text>
+          <text x="170" y="48" font-family="Impact,sans-serif" font-size="11" fill="#aaa" text-anchor="middle">with a text message</text>
+          <!-- Panel 2 - medium brain -->
+          <rect x="5" y="72" width="290" height="55" fill="#1a0a3e" rx="4"/>
+          <ellipse cx="50" cy="99" rx="28" ry="22" fill="#8e44ad"/>
+          <circle cx="60" cy="88" r="8" fill="#a060cc" opacity="0.6"/>
+          <text x="50" y="105" font-size="12" text-anchor="middle">🧠✨</text>
+          <text x="170" y="94" font-family="Impact,sans-serif" font-size="11" fill="white" text-anchor="middle">Baking Ruben a cake</text>
+          <text x="170" y="110" font-family="Impact,sans-serif" font-size="11" fill="#ccaaff" text-anchor="middle">shaped like a cassette</text>
+          <!-- Panel 3 - big glowing brain -->
+          <rect x="5" y="134" width="290" height="58" fill="#150050" rx="4"/>
+          <ellipse cx="50" cy="163" rx="33" ry="26" fill="#9b00ff"/>
+          <ellipse cx="38" cy="150" rx="12" ry="10" fill="#cc44ff" opacity="0.7"/>
+          <ellipse cx="63" cy="148" rx="10" ry="9" fill="#ff44ff" opacity="0.6"/>
+          <text x="50" y="168" font-size="14" text-anchor="middle">🧠💫</text>
+          <text x="170" y="155" font-family="Impact,sans-serif" font-size="11" fill="white" text-anchor="middle">Hiring a full disco band</text>
+          <text x="170" y="171" font-family="Impact,sans-serif" font-size="11" fill="#ff88ff" text-anchor="middle">to serenade Ruben</text>
+          <!-- Panel 4 - GALAXY BRAIN -->
+          <rect x="5" y="199" width="290" height="96" fill="#020010" rx="4"/>
+          <ellipse cx="50" cy="248" rx="38" ry="35" fill="none" stroke="#00ffff" stroke-width="1.5"/>
+          <ellipse cx="50" cy="248" rx="28" ry="25" fill="#001a4a"/>
+          <ellipse cx="38" cy="234" rx="14" ry="12" fill="#0044aa" opacity="0.8"/>
+          <ellipse cx="63" cy="232" rx="12" ry="11" fill="#4400aa" opacity="0.7"/>
+          <ellipse cx="30" cy="256" rx="8" ry="7" fill="#aa0044" opacity="0.6"/>
+          <ellipse cx="68" cy="255" rx="9" ry="8" fill="#008844" opacity="0.6"/>
+          <!-- Stars around -->
+          <text x="12" y="215" font-size="8" fill="#FFD700">★</text>
+          <text x="82" y="210" font-size="8" fill="#00ffff">★</text>
+          <text x="5" y="268" font-size="7" fill="#ff69b4">★</text>
+          <text x="87" y="278" font-size="8" fill="#adff2f">★</text>
+          <text x="50" y="253" font-size="16" text-anchor="middle">🌌</text>
+          <text x="170" y="228" font-family="Impact,sans-serif" font-size="12" fill="#00ffff" text-anchor="middle">BECOMING THE</text>
+          <text x="170" y="246" font-family="Impact,sans-serif" font-size="12" fill="#ff00ff" text-anchor="middle">DISCO BALL ITSELF</text>
+          <text x="170" y="264" font-family="Impact,sans-serif" font-size="12" fill="#FFD700" text-anchor="middle">FOR RUBEN'S BIRTHDAY</text>
+          <text x="170" y="284" font-family="Impact,sans-serif" font-size="18" fill="white" text-anchor="middle">🪩🎂🪩</text>
+        </svg>
+      </div>
+      <div class="meme-caption">The evolution of birthday planning</div>
+    </div>
+
+  </div><!-- end meme-grid -->
+
+  <!-- SECOND MARQUEE -->
+  <div class="marquee-band" style="transform: rotate(1deg); background: var(--purple);">
+    <div class="marquee-inner" style="animation-direction: reverse; gap: 30px;">
+      <span>🪩 YOU'RE A LEGEND RUBEN 🪩</span>
+      <span>🎷 JAZZ HANDS ALL DAY 🎷</span>
+      <span>🕺 BOOGIE WONDERLAND 🕺</span>
+      <span>🎸 OLD SCHOOL COOL 🎸</span>
+      <span>🪩 YOU'RE A LEGEND RUBEN 🪩</span>
+      <span>🎷 JAZZ HANDS ALL DAY 🎷</span>
+      <span>🎸 OLD SCHOOL COOL 🎸</span>
+    </div>
+  </div>
+
+  <!-- FINAL SPEECH BUBBLE -->
+  <div class="speech-bubble" style="background: var(--gold); color: #111; box-shadow: 4px 4px 0 var(--pink);">
+    🎷 May your birthday be as funky as a Bootsy Collins bassline and as smooth as a Barry White slow jam, Ruben! 🎶
+  </div>
+
+  <!-- FOOTER -->
+  <div class="disco-footer">
+    <div class="footer-text">✦ KEEP ON DANCING RUBEN ✦</div>
+    <div class="emoji-dance">
+      <span>🕺</span>
+      <span>🎂</span>
+      <span>🪩</span>
+      <span>🎷</span>
+      <span>🎸</span>
+      <span>🕺</span>
+    </div>
+    <div style="margin-top: 30px; font-family: 'VT323', monospace; font-size: 20px; color: rgba(255,255,255,0.3); letter-spacing: 3px; text-align: center;">
+      RUBEN.FM © BIRTHDAY DISCO STUDIOS
+    </div>
+  </div>
+
+</div><!-- end content -->
+
+<script>
+// Generate twinkling stars
+const starsEl = document.getElementById('stars');
+for (let i = 0; i < 80; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 3 + 1;
+  star.style.cssText = `
+    left: ${Math.random() * 100}%;
+    top: ${Math.random() * 100}%;
+    width: ${size}px;
+    height: ${size}px;
+    animation-delay: ${Math.random() * 3}s;
+    animation-duration: ${1.5 + Math.random() * 2}s;
+  `;
+  starsEl.appendChild(star);
+}
+
+// Generate confetti
+const colors = ['#FFD700','#FF1493','#00CED1','#ADFF2F','#FF6B35','#8B00FF','#FF69B4'];
+const shapes = ['', 'border-radius: 50%;'];
+for (let i = 0; i < 35; i++) {
+  const c = document.createElement('div');
+  c.className = 'confetti-piece';
+  const size = 6 + Math.random() * 10;
+  c.style.cssText = `
+    left: ${Math.random() * 100}%;
+    width: ${size}px;
+    height: ${size}px;
+    background: ${colors[Math.floor(Math.random() * colors.length)]};
+    ${shapes[Math.floor(Math.random() * shapes.length)]}
+    animation-duration: ${3 + Math.random() * 6}s;
+    animation-delay: ${Math.random() * 5}s;
+  `;
+  document.body.appendChild(c);
+}
+
+// ── YOUTUBE BACKGROUND MUSIC ──
+// Hidden YT iframe – autoplay needs a user gesture, so we hook the first click/tap
+const ytDiv = document.createElement('div');
+ytDiv.id = 'yt-player';
+ytDiv.style.cssText = 'position:fixed;bottom:-9999px;left:-9999px;width:1px;height:1px;';
+document.body.appendChild(ytDiv);
+
+let ytReady = false;
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('yt-player', {
+    videoId: '73MRK54RO1c',
+    playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: '73MRK54RO1c', rel: 0, mute: 0 },
+    events: { onReady: () => { ytReady = true; } }
+  });
+}
+
+// Load YT script
+const ytScript = document.createElement('script');
+ytScript.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(ytScript);
+
+// Music control button
+const musicBtn = document.createElement('button');
+musicBtn.id = 'music-btn';
+musicBtn.innerHTML = '🎵 PLAY MUSIC';
+musicBtn.style.cssText = `
+  position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+  background: linear-gradient(135deg, #FF1493, #8B00FF);
+  color: white; border: none; border-radius: 50px;
+  padding: 12px 22px; font-family: 'Righteous', cursive;
+  font-size: 15px; cursor: pointer; letter-spacing: 2px;
+  box-shadow: 0 0 20px rgba(255,20,147,0.6), 0 4px 12px rgba(0,0,0,0.4);
+  animation: btn-pulse 1.5s ease-in-out infinite;
+`;
+document.body.appendChild(musicBtn);
+
+const btnStyle = document.createElement('style');
+btnStyle.textContent = `@keyframes btn-pulse { 0%,100%{box-shadow:0 0 20px rgba(255,20,147,0.6),0 4px 12px rgba(0,0,0,0.4);} 50%{box-shadow:0 0 40px rgba(255,20,147,0.9),0 4px 24px rgba(139,0,255,0.6);} }`;
+document.head.appendChild(btnStyle);
+
+let playing = false;
+musicBtn.addEventListener('click', () => {
+  if (!ytReady) { musicBtn.innerHTML = '⏳ LOADING...'; return; }
+  if (!playing) {
+    player.setVolume(70);
+    player.playVideo();
+    playing = true;
+    musicBtn.innerHTML = '⏸ PAUSE MUSIC';
+    musicBtn.style.background = 'linear-gradient(135deg, #00CED1, #8B00FF)';
+  } else {
+    player.pauseVideo();
+    playing = false;
+    musicBtn.innerHTML = '🎵 PLAY MUSIC';
+    musicBtn.style.background = 'linear-gradient(135deg, #FF1493, #8B00FF)';
+  }
+});
+
+// Disco light spots on mouse move
+document.addEventListener('mousemove', function(e) {
+  const spot = document.createElement('div');
+  spot.style.cssText = `
+    position: fixed;
+    left: ${e.clientX - 15}px;
+    top: ${e.clientY - 15}px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, ${colors[Math.floor(Math.random()*colors.length)]}88, transparent);
+    pointer-events: none;
+    z-index: 500;
+    transition: opacity 0.5s;
+  `;
+  document.body.appendChild(spot);
+  setTimeout(() => { spot.style.opacity = '0'; setTimeout(() => spot.remove(), 500); }, 100);
+});
+</script>
+</body>
+</html>
